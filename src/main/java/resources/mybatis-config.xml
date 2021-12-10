@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuration-->
+<configuration>
+    <!-- Presentación de archivos de configuración externos -->
+       <properties resource ="resources/ApplicationResources.properties" >
+      </properties>
+      
+    <!--  bean -->
+    <typeAliases>
+        <typeAlias type="com.avalon.firstpru.entity.empresa" alias="empresa" />
+    </typeAliases>
+ 
+    <!-- -->
+
+    <environments default="admin">
+        <environment id="admin">
+            <!--   -->
+            <transactionManager type="JDBC"> </transactionManager>
+            <!--POOLED-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driverClassName}" />
+                <property name="url" value="${url}" />
+                <property name="username" value="${username}" />
+                <property name="password" value="${password}" />
+            </dataSource>
+        </environment>
+    </environments>
+ 
+   
+    <mappers>
+      <!--    <mapper resource="applicationContext-firstpru-db-test.xml" />-->
+      
+ 
+          <mapper resource="com/avalon/firstpru/DAO/Impl/xml/empresaMapper.xml"/> 
+    </mappers>
+ 
+</configuration>

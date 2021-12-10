@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.avalon.firstpru.DAO.Impl.empresaMapperImpl">
+	
+	<resultMap type="empresa" id="result">
+		
+		<result property="nombre" column="nbempres" />
+
+	</resultMap>
+	
+	<select id="getempresa" resultType="empresa" resultMap="result">
+		SELECT nbempres FROM tsfempnombre
+WHERE cdempres = 1003 and nuhisnom = 1
+	</select>
+	
+
+	
+</mapper>
